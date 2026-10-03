@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Panel admin | inayah.store</title>
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<!-- Panel admin Decap CMS. Login pakai akun GitHub yang punya akses tulis ke repo. -->
+<script>window.CMS_MANUAL_INIT = true;</script>
+<script src="https://unpkg.com/decap-cms@3.16.3/dist/decap-cms.js"></script>
+<script>
+  // base_url = domain situs ini, supaya login lewat /api/auth di Vercel (bukan Netlify)
+  CMS.init({ config: { backend: { base_url: location.origin } } });
+  // Pratinjau di panel memakai CSS situs
+  CMS.registerPreviewStyle("/assets/css/style.css");
+</script>
+</body>
+</html>

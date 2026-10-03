@@ -1,0 +1,56 @@
+# PROJECT.assist — baca file ini DULU sebelum mengubah apa pun (hemat token)
+
+## Ringkasan
+Situs statis toko buket & kue "inayah.store". HTML + CSS + JS biasa, TANPA build. Isi diedit lewat Decap CMS (/admin) → commit GitHub → deploy Vercel.
+Pesan & bayar lewat WhatsApp. Pengaduan lewat email (template otomatis). Bahasa: Indonesia, sapaan "kamu".
+
+## Peta file → edit di mana
+| Mau ubah                                   | File                     |
+|--------------------------------------------|--------------------------|
+| Kontak, jam, pembayaran, teks hero & tentang | content/situs.json (panel: Pengaturan situs) |
+| Produk (buket/kue/papan), harga, foto       | content/produk.json + assets/img/products/ (panel: Produk) |
+| Ulasan                                     | content/ulasan.json (panel: Ulasan) |
+| Field panel admin                          | admin/config.yml         |
+| Login GitHub panel admin                   | api/auth.js, api/callback.js (env GITHUB_CLIENT_ID/SECRET) |
+| Memuat data JSON lalu script lain          | assets/js/loader.js      |
+| Logo                                       | assets/img/logo.svg + favicon.svg |
+| Warna, font, jarak                         | assets/css/style.css (`:root` di baris atas) |
+| Header, footer, menu, kartu produk, ilustrasi pengganti | assets/js/core.js |
+| Daftar produk (cari/filter/urut), halaman detail + pesan WA | assets/js/produk.js |
+| Ulasan + form ulasan                       | assets/js/ulasan.js      |
+| Form pengaduan + template email            | assets/js/pengaduan.js   |
+| Teks halaman lain (cara pesan, dll.)       | index.html               |
+
+Halaman: index.html, produk.html, produk-detail.html?id=<id>, pengaduan.html.
+Header/footer TIDAK ada di HTML; disuntik core.js. Ubah menu di array `nav` (core.js).
+Setiap halaman hanya memuat loader.js; loader mengisi window.SITE/PRODUK/ULASAN dari content/*.json lalu memuat core → produk → ulasan → pengaduan.
+
+## Skema data
+PRODUK: {id, nama, kategori:"buket"|"kue"|"papan", harga:angka rupiah penuh, deskripsi, foto:"/assets/img/products/x.jpg"|"", tema, unggulan, aktif, urut}
+  tema buket: rose|blush|blue|mix|koran   tema papan: mirror|akrilik|akrilikblue
+ULASAN: {produk:<id>, nama, bintang:1-5, tanggal:"YYYY-MM-DD", teks, demo?:true}
+
+## Aturan (jangan dilanggar)
+- Pembayaran HANYA lewat WhatsApp. Jangan tambah gateway/checkout.
+- Jangan hotlink gambar/skrip Wix. Aset harus lokal (kecuali Google Fonts & embed Google Maps).
+- Semua kontak lewat `window.SITE` (content/situs.json); jangan tulis nomor/email langsung di HTML/JS lain.
+- Field baru di JSON harus ditambahkan juga ke admin/config.yml.
+- Ulasan asli saja untuk live. Entri `demo:true` = contoh; matikan `tampilkanUlasanContoh` atau hapus.
+- Gambar metode pembayaran adalah label sederhana, bukan logo resmi. Ganti dengan logo resmi jika perlu.
+
+## Hemat token (untuk asisten AI)
+1. Baca file ini saja; JANGAN membuka semua file. Buka hanya file yang ada di tabel untuk tugasnya.
+2. Edit dengan penggantian teks yang tertarget (str_replace), jangan menulis ulang seluruh file.
+3. Data konten (produk/ulasan/kontak) cukup diubah di content/*.json — jangan sentuh HTML/CSS/JS lain.
+4. Jangan membuat ulang zip/README/ringkasan kecuali diminta. Jawab singkat: sebut file yang diubah + 1 kalimat.
+5. Gabungkan beberapa perubahan dalam satu kali edit; jangan mengulang daftar file yang tidak berubah.
+6. Jangan menjalankan pencarian web atau mengunduh ulang situs lama; kontennya ada di content/*.json.
+7. Cek sintaks JS dengan `node --check assets/js/<file>.js` setelah edit (murah), bukan membuka ulang file.
+
+## TODO sebelum live
+- [ ] Buat GitHub OAuth App + isi GITHUB_CLIENT_ID/SECRET di Vercel (lihat README)
+- [ ] Ganti produk & foto lama (milik Bouquet by Sindi) dengan produk inayah.store
+- [ ] Tulis ulang "Tentang kami" (masih draf)
+- [ ] Lengkapi alamat di Pengaturan situs
+- [ ] Ganti logo sementara (assets/img/logo.svg)
+- [ ] Ganti ulasan contoh dengan ulasan asli, lalu matikan tampilkanUlasanContoh

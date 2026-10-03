@@ -1,0 +1,123 @@
+# Konfigurasi panel admin (Decap CMS). Setiap "Publish" = commit ke GitHub -> Vercel deploy otomatis.
+backend:
+  name: github
+  repo: Rzkyyy-cpu/toko-buket-statis
+  branch: main
+  auth_endpoint: api/auth
+  commit_messages:
+    update: "Admin: ubah {{collection}}"
+    uploadMedia: "Admin: unggah {{path}}"
+    deleteMedia: "Admin: hapus {{path}}"
+
+# Tes di laptop: jalankan `npx decap-server`, lalu buka http://localhost:5501/admin/ (tanpa login)
+local_backend: true
+
+media_folder: assets/img/products
+public_folder: /assets/img/products
+site_url: /
+display_url: /
+logo_url: /assets/img/logo.svg
+
+collections:
+  - name: produk
+    label: Produk
+    description: Tambah, ubah, atau sembunyikan produk (buket, kue, papan ucapan).
+    files:
+      - name: daftar
+        label: Daftar produk
+        file: content/produk.json
+        fields:
+          - label: Produk
+            name: produk
+            widget: list
+            label_singular: produk
+            add_to_top: true
+            summary: "{{fields.nama}} · {{fields.kategori}} · Rp{{fields.harga}}"
+            fields:
+              - { label: Nama produk, name: nama, widget: string }
+              - label: ID (untuk link)
+                name: id
+                widget: string
+                hint: "Huruf kecil dan tanda strip, harus unik. Contoh: kue-ulang-tahun-coklat"
+                pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Pakai huruf kecil, angka, dan tanda strip saja"]
+              - label: Kategori
+                name: kategori
+                widget: select
+                options: [{ label: Buket, value: buket }, { label: Kue, value: kue }, { label: Papan ucapan (sewa), value: papan }]
+              - { label: Harga (rupiah penuh), name: harga, widget: number, value_type: int, min: 0, hint: "85000 = Rp85.000" }
+              - { label: Deskripsi, name: deskripsi, widget: text, required: false }
+              - { label: Foto, name: foto, widget: image, required: false, choose_url: false, hint: "Rasio 4:5 (potret) paling pas. Ukuran di bawah 500 KB." }
+              - label: Warna ilustrasi (dipakai kalau belum ada foto)
+                name: tema
+                widget: select
+                required: false
+                options: [rose, blush, blue, mix, koran, mirror, akrilik, akrilikblue]
+              - { label: Tampil di beranda, name: unggulan, widget: boolean, default: false }
+              - { label: Tampilkan di situs, name: aktif, widget: boolean, default: true, hint: "Matikan untuk menyembunyikan tanpa menghapus" }
+              - { label: Urutan, name: urut, widget: number, value_type: int, default: 99, hint: "Angka kecil tampil lebih dulu" }
+
+  - name: ulasan
+    label: Ulasan
+    description: Ulasan pelanggan yang dikirim lewat WhatsApp.
+    files:
+      - name: daftar
+        label: Daftar ulasan
+        file: content/ulasan.json
+        fields:
+          - label: Ulasan
+            name: ulasan
+            widget: list
+            add_to_top: true
+            summary: "{{fields.nama}} · {{fields.bintang}}★ · {{fields.tanggal}}"
+            fields:
+              - label: Produk
+                name: produk
+                widget: relation
+                collection: produk
+                file: daftar
+                search_fields: ["produk.*.nama"]
+                display_fields: ["produk.*.nama"]
+                value_field: "produk.*.id"
+              - { label: Nama pelanggan, name: nama, widget: string }
+              - { label: Bintang (1-5), name: bintang, widget: number, value_type: int, min: 1, max: 5, default: 5 }
+              - { label: Tanggal, name: tanggal, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - { label: Isi ulasan, name: teks, widget: text }
+              - { label: Ulasan contoh, name: demo, widget: boolean, default: false, required: false }
+
+  - name: pengaturan
+    label: Pengaturan situs
+    files:
+      - name: situs
+        label: Kontak, jam buka, dan teks
+        file: content/situs.json
+        fields:
+          - { label: Nama toko, name: nama, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Teks pembuka beranda, name: heroLead, widget: text }
+          - { label: Judul "Tentang kami", name: tentangJudul, widget: string }
+          - { label: Isi "Tentang kami", name: tentang, widget: text, hint: "Pisahkan paragraf dengan satu baris kosong" }
+          - label: Nomor WhatsApp
+            name: wa
+            widget: string
+            hint: "Format 62xxxxxxxxxx, tanpa + atau 0 di depan"
+            pattern: ['^62\d{8,13}$', "Contoh: 6281234567890"]
+          - { label: Email pengaduan, name: email, widget: string }
+          - { label: Alamat toko, name: alamat, widget: string }
+          - { label: Teks pencarian Google Maps, name: mapQuery, widget: string }
+          - { label: Username Instagram, name: instagram, widget: string, required: false }
+          - label: Jam buka
+            name: jam
+            widget: list
+            summary: "{{fields.hari}}: {{fields.waktu}}"
+            fields:
+              - { label: Hari, name: hari, widget: string }
+              - { label: Jam, name: waktu, widget: string }
+          - label: Logo metode pembayaran (kosongkan untuk menyembunyikan)
+            name: pembayaran
+            widget: list
+            required: false
+            summary: "{{fields.nama}}"
+            fields:
+              - { label: Jenis, name: id, widget: select, options: [bca, mandiri, bri, bni, qris, gopay, dana, ovo, shopeepay] }
+              - { label: Nama tampil, name: nama, widget: string }
+          - { label: Tampilkan ulasan contoh, name: tampilkanUlasanContoh, widget: boolean, hint: "Matikan sebelum situs dipromosikan" }

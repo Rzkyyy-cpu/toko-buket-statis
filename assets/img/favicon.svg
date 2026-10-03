@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- inayah.store — logo sementara (monogram bunga). Ganti dengan logo asli bila sudah ada. -->
+  <circle cx="32" cy="32" r="31" fill="#F4E6E4"/>
+  <circle cx="32" cy="32" r="28.5" fill="none" stroke="#B48A5E" stroke-width="1.2"/>
+  <path d="M32 50 V33" stroke="#7E9A84" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 44 C27 43 24 40 23 36 C28 36 31 39 32 44 Z" fill="#9DB4A0"/>
+  <path d="M32 41 C37 40 40 37 41 33 C36 33 33 36 32 41 Z" fill="#7E9A84"/>
+  <g fill="#E3B9C2">
+    <ellipse cx="32" cy="16" rx="5" ry="8"/>
+    <ellipse cx="32" cy="16" rx="5" ry="8" transform="rotate(72 32 24)"/>
+    <ellipse cx="32" cy="16" rx="5" ry="8" transform="rotate(144 32 24)"/>
+    <ellipse cx="32" cy="16" rx="5" ry="8" transform="rotate(216 32 24)"/>
+    <ellipse cx="32" cy="16" rx="5" ry="8" transform="rotate(288 32 24)"/>
+  </g>
+  <circle cx="32" cy="24" r="4.2" fill="#8E5463"/>
+  <circle cx="32" cy="24" r="1.6" fill="#F4E6E4"/>
+</svg>

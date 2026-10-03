@@ -1,0 +1,28 @@
+{
+  "ulasan": [
+    {
+      "produk": "thumbelina-large",
+      "nama": "Nama Pelanggan",
+      "bintang": 5,
+      "tanggal": "2026-01-01",
+      "demo": true,
+      "teks": "Contoh ulasan. Ganti dengan ulasan asli pelanggan setelah pesanan mereka selesai."
+    },
+    {
+      "produk": "thumbelina-rayya-blue",
+      "nama": "Nama Pelanggan",
+      "bintang": 4,
+      "tanggal": "2026-01-02",
+      "demo": true,
+      "teks": "Contoh ulasan kedua. Tulis kesan pelanggan tentang rangkaian dan pelayanan."
+    },
+    {
+      "produk": "papan-ucapan-akrilik",
+      "nama": "Nama Pelanggan",
+      "bintang": 5,
+      "tanggal": "2026-01-03",
+      "demo": true,
+      "teks": "Contoh ulasan untuk papan ucapan sewa."
+    }
+  ]
+}

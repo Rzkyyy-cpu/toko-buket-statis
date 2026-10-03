@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+<title>Semua produk | inayah.store</title>
+<meta name="description" content="Daftar buket, kue, dan papan ucapan sewa dari inayah.store. Pesan lewat WhatsApp.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F4E6E4">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="produk">
+<main id="main" class="wrap sec">
+  <h1>Semua produk</h1>
+  <p class="lead">Pilih buket, kue, atau papan ucapan, lalu pesan lewat WhatsApp.</p>
+  <div class="toolbar">
+    <div class="chips" role="group" aria-label="Kategori">
+      <button type="button" class="chip" data-kat="semua" aria-pressed="true">Semua</button>
+      <button type="button" class="chip" data-kat="buket" aria-pressed="false">Buket</button>
+      <button type="button" class="chip" data-kat="kue" aria-pressed="false">Kue</button>
+      <button type="button" class="chip" data-kat="papan" aria-pressed="false">Papan ucapan</button>
+    </div>
+    <div class="grow"><label class="sr" for="cari">Cari produk</label><input id="cari" type="search" placeholder="Cari nama produk"></div>
+    <div><label class="sr" for="urut">Urutkan</label>
+      <select id="urut"><option value="rekomendasi">Rekomendasi</option><option value="murah">Harga terendah</option><option value="mahal">Harga tertinggi</option><option value="nama">Nama A–Z</option></select></div>
+  </div>
+  <p id="jumlah" class="hint" aria-live="polite"></p>
+  <div class="grid" id="daftar"></div>
+  <div class="empty" id="kosong" hidden><h2>Produk tidak ditemukan</h2><p>Coba kata kunci lain atau tampilkan semua produk.</p><button type="button" class="btn" id="reset">Tampilkan semua</button></div>
+</main>
+<noscript><p class="wrap">Situs ini memerlukan JavaScript untuk menampilkan produk.</p></noscript>
+<script src="assets/js/loader.js" defer></script>
+</body>
+</html>

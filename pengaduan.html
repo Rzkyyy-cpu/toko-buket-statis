@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+<head>
+<title>Layanan pengaduan | inayah.store</title>
+<meta name="description" content="Sampaikan pengaduan pesananmu lewat email. Template sudah disiapkan, tinggal diisi.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F4E6E4">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="pengaduan">
+<main id="main" class="wrap sec">
+  <h1>Layanan pengaduan</h1>
+  <p class="lead">Ada pesanan yang tidak sesuai? Isi formulir ini. Isi email sudah disusun otomatis, kamu tinggal memeriksa lalu mengirim.</p>
+  <div class="two-col">
+    <form id="form-pengaduan" class="formcard" style="margin-top:0" novalidate>
+      <div class="two">
+        <div class="field"><label for="p-nama">Nama</label><input id="p-nama" autocomplete="name" maxlength="80"></div>
+        <div class="field"><label for="p-wa">Nomor WhatsApp</label><input id="p-wa" type="tel" autocomplete="tel" inputmode="tel" maxlength="20"></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="p-produk">Produk</label><select id="p-produk"></select></div>
+        <div class="field"><label for="p-pesanan">Nomor atau tanggal pesanan</label><input id="p-pesanan" maxlength="60" placeholder="Opsional"></div>
+      </div>
+      <div class="field"><label for="p-jenis">Jenis pengaduan</label>
+        <select id="p-jenis"><option>Produk tidak sesuai pesanan</option><option>Kondisi bunga atau rangkaian kurang baik</option><option>Pesanan terlambat</option><option>Papan ucapan bermasalah</option><option>Pelayanan admin</option><option>Lainnya</option></select></div>
+      <div class="field"><label for="p-detail">Keluhan dan kronologi</label><textarea id="p-detail" rows="5" maxlength="1200"></textarea></div>
+      <div class="field" style="margin-bottom:0"><label for="p-harapan">Harapan penyelesaian</label><textarea id="p-harapan" rows="2" maxlength="400"></textarea></div>
+    </form>
+    <div>
+      <h2>Pratinjau email</h2>
+      <label class="sr" for="pratinjau">Isi email</label>
+      <textarea id="pratinjau" readonly rows="16"></textarea>
+      <div class="actions">
+        <a id="k-mail" class="btn disabled" href="#">Buka di aplikasi email</a>
+        <a id="k-gmail" class="btn btn-ghost disabled" href="#" target="_blank" rel="noopener">Buka di Gmail</a>
+        <button type="button" id="k-salin" class="btn btn-ghost">Salin template</button>
+      </div>
+      <p class="hint" id="p-info" aria-live="polite"></p>
+    </div>
+  </div>
+  <p style="margin-top:32px">Pertanyaan biasa atau pesanan baru? <a data-wa="Halo inayah.store, saya mau tanya." href="#setup">Hubungi lewat WhatsApp</a>.</p>
+</main>
+<noscript><p class="wrap">Formulir ini memerlukan JavaScript.</p></noscript>
+<script src="assets/js/loader.js" defer></script>
+</body>
+</html>

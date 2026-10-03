@@ -1,0 +1,136 @@
+{
+  "produk": [
+    {
+      "id": "thumbelina-large",
+      "nama": "Thumbelina Sera",
+      "kategori": "buket",
+      "harga": 85000,
+      "deskripsi": "Tanyakan ketersediaan dan detail rangkaian lewat WhatsApp.",
+      "foto": "/assets/img/products/thumbelina-large.jpg",
+      "tema": "rose",
+      "unggulan": true,
+      "aktif": true,
+      "urut": 1
+    },
+    {
+      "id": "thumbelina-sera",
+      "nama": "Thumbelina Marry",
+      "kategori": "buket",
+      "harga": 1000000,
+      "deskripsi": "Tanyakan ketersediaan dan detail rangkaian lewat WhatsApp.",
+      "foto": "/assets/img/products/thumbelina-sera.jpg",
+      "tema": "blush",
+      "unggulan": true,
+      "aktif": true,
+      "urut": 2
+    },
+    {
+      "id": "thumbelina-mix-m",
+      "nama": "Thumbelina Mix (Ukuran M)",
+      "kategori": "buket",
+      "harga": 140000,
+      "deskripsi": "Tanyakan ketersediaan dan detail rangkaian lewat WhatsApp.",
+      "foto": "/assets/img/products/thumbelina-mix-m.jpg",
+      "tema": "mix",
+      "unggulan": true,
+      "aktif": true,
+      "urut": 3
+    },
+    {
+      "id": "lily-pink-dreamland",
+      "nama": "Lily Pink Dreamland",
+      "kategori": "buket",
+      "harga": 300000,
+      "deskripsi": "Tanyakan ketersediaan dan detail rangkaian lewat WhatsApp.",
+      "foto": "/assets/img/products/lily-pink-dreamland.jpg",
+      "tema": "blush",
+      "unggulan": true,
+      "aktif": true,
+      "urut": 4
+    },
+    {
+      "id": "thumbelina-marry",
+      "nama": "Thumbelina Marry",
+      "kategori": "buket",
+      "harga": 100000,
+      "deskripsi": "Tanyakan ketersediaan dan detail rangkaian lewat WhatsApp.",
+      "foto": "/assets/img/products/thumbelina-marry.jpg",
+      "tema": "blush",
+      "unggulan": true,
+      "aktif": true,
+      "urut": 5
+    },
+    {
+      "id": "thumbelina-berry-blush",
+      "nama": "Thumbelina Berry Blush",
+      "kategori": "buket",
+      "harga": 350000,
+      "deskripsi": "Tanyakan ketersediaan dan detail rangkaian lewat WhatsApp.",
+      "foto": "/assets/img/products/thumbelina-berry-blush.jpg",
+      "tema": "rose",
+      "unggulan": true,
+      "aktif": true,
+      "urut": 6
+    },
+    {
+      "id": "thumbelina-rayya-blue",
+      "nama": "Thumbelina Rayya Blue",
+      "kategori": "buket",
+      "harga": 230000,
+      "deskripsi": "Tanyakan ketersediaan dan detail rangkaian lewat WhatsApp.",
+      "foto": "/assets/img/products/thumbelina-rayya-blue.jpg",
+      "tema": "blue",
+      "unggulan": true,
+      "aktif": true,
+      "urut": 7
+    },
+    {
+      "id": "thumbelina-kertas-koran",
+      "nama": "Thumbelina Kertas Koran",
+      "kategori": "buket",
+      "harga": 85000,
+      "deskripsi": "Tanyakan ketersediaan dan detail rangkaian lewat WhatsApp.",
+      "foto": "/assets/img/products/thumbelina-kertas-koran.jpg",
+      "tema": "koran",
+      "unggulan": true,
+      "aktif": true,
+      "urut": 8
+    },
+    {
+      "id": "papan-ucapan-mirror",
+      "nama": "Sewa Papan Ucapan Mirror",
+      "kategori": "papan",
+      "harga": 100000,
+      "deskripsi": "Papan ucapan sewa untuk wisuda, ulang tahun, tunangan, atau pernikahan. Tanyakan ketersediaan dan lama sewa lewat WhatsApp.",
+      "foto": "/assets/img/products/papan-ucapan-mirror.jpg",
+      "tema": "mirror",
+      "unggulan": false,
+      "aktif": true,
+      "urut": 9
+    },
+    {
+      "id": "papan-ucapan-akrilik",
+      "nama": "Sewa Papan Ucapan Akrilik",
+      "kategori": "papan",
+      "harga": 95000,
+      "deskripsi": "Papan ucapan sewa untuk wisuda, ulang tahun, tunangan, atau pernikahan. Tanyakan ketersediaan dan lama sewa lewat WhatsApp.",
+      "foto": "/assets/img/products/papan-ucapan-akrilik.jpg",
+      "tema": "akrilik",
+      "unggulan": false,
+      "aktif": true,
+      "urut": 10
+    },
+    {
+      "id": "papan-ucapan-akrilik-blue",
+      "nama": "Sewa Papan Ucapan Akrilik Blue",
+      "kategori": "papan",
+      "harga": 85000,
+      "deskripsi": "Papan ucapan sewa untuk wisuda, ulang tahun, tunangan, atau pernikahan. Tanyakan ketersediaan dan lama sewa lewat WhatsApp.",
+      "foto": "/assets/img/products/papan-ucapan-akrilik-blue.jpg",
+      "tema": "akrilikblue",
+      "unggulan": false,
+      "aktif": true,
+      "urut": 11
+    }
+  ]
+}
